@@ -118,7 +118,7 @@ export default function HomePage() {
           <h2 className="text-2xl tracking-widest md:text-3xl" style={{fontFamily:"var(--font-calligraphy)"}}>在线上香</h2>
           <p className="mx-auto max-w-md text-base leading-loose" style={{color:"rgba(26,20,16,0.8)"}}>静心三礼九炷，为自己、为家人、为众生。把心念安放下来，人也更容易慢慢安定。</p>
           <Link href="/temple"
-            className="inline-flex items-center justify-center gap-2 font-body font-medium transition-all rounded-lg bg-vermillion tracking-wider text-white shadow-lg shadow-vermillion/20 hover:bg-vermillion-light h-10 px-5 text-base no-underline">
+            className="inline-flex items-center justify-center gap-2 font-body font-medium transition-all rounded-lg bg-[#c41e1e] tracking-wider text-white shadow-lg shadow-red-600/30 hover:bg-[#e03838] h-10 px-5 text-base no-underline">
             敬上一炷清香
           </Link>
           <GoldDivider/>

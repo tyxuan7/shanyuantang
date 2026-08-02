@@ -115,22 +115,13 @@ export default function PayModal({ productName, amount, onSuccess, onCancel }: P
             <p className="text-sm text-paper-dark">{productName}</p>
             <p className="text-2xl text-gold font-bold">¥{(amount / 100).toFixed(2)}</p>
 
-            <div className="space-y-2">
-              <button
-                onClick={() => handleCreate("alipay")}
-                disabled={loading}
-                className="w-full py-3 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-500 transition-all flex items-center justify-center gap-2"
-              >
-                💙 支付宝支付
-              </button>
-              <button
-                onClick={() => handleCreate("wechat")}
-                disabled={loading}
-                className="w-full py-3 rounded-lg bg-green-600 text-white font-semibold text-sm hover:bg-green-500 transition-all flex items-center justify-center gap-2"
-              >
-                💚 微信支付
-              </button>
-            </div>
+            <button
+              onClick={() => handleCreate("alipay")}
+              disabled={loading}
+              className="w-full py-3 rounded-lg bg-[#1677ff] text-white font-semibold text-sm hover:bg-[#4096ff] transition-all"
+            >
+              支付宝支付
+            </button>
 
             <button onClick={onCancel} className="text-xs text-paper-muted hover:text-paper-dark">
               取消
@@ -142,7 +133,7 @@ export default function PayModal({ productName, amount, onSuccess, onCancel }: P
         {step === "paying" && (
           <div className="space-y-4 text-center">
             <p className="text-gold font-semibold">
-              {payMethod === "alipay" ? "💙 支付宝扫码支付" : "💚 微信扫码支付"}
+              支付宝扫码支付
             </p>
 
             {qrDataUrl ? (
