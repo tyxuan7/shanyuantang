@@ -25,7 +25,7 @@ export default function PayModal({ productName, amount, onSuccess, onCancel }: P
     setLoading(true);
     const res = await fetch("/api/payment/create",{
       method:"POST",headers:{"Content-Type":"application/json",...getGuestHeaders()},
-      body:JSON.stringify({product_type: "single_bazi_deep", pay_method: "wechat"}),
+      body:JSON.stringify({product_type: "single_bazi_deep", pay_method: "alipay"}),
     });
     const d = await res.json();
     setLoading(false);
@@ -57,7 +57,7 @@ export default function PayModal({ productName, amount, onSuccess, onCancel }: P
             <p className="text-sm text-paper-dark">{productName}</p>
             <p className="text-2xl text-gold font-bold">¥{(amount/100).toFixed(2)}</p>
             <div className="flex items-center justify-center gap-2 py-2 text-green-400 text-sm">
-              <span>💚</span><span>微信支付</span>
+              <span>💚</span><span>支付宝</span>
             </div>
             <button onClick={handleCreate} disabled={loading}
               className="w-full py-3 rounded-lg bg-gold text-xuan font-semibold text-sm hover:bg-gold-light transition-all">{loading?"创建中...":"确认支付"}</button>
