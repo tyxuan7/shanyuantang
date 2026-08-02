@@ -6,8 +6,8 @@
 import crypto from "crypto";
 
 const APP_ID = process.env.ALIPAY_APP_ID || "";
-const PRIVATE_KEY = (process.env.ALIPAY_PRIVATE_KEY || "").replace(/\\n/g, "\n");
-const PUBLIC_KEY = (process.env.ALIPAY_PUBLIC_KEY || "").replace(/\\n/g, "\n");
+const PRIVATE_KEY = (process.env.ALIPAY_PRIVATE_KEY || "").replace(/\\n/g, "\n").replace(/"/g, "");
+const PUBLIC_KEY = (process.env.ALIPAY_PUBLIC_KEY || "").replace(/\\n/g, "\n").replace(/"/g, "");
 const GATEWAY = "https://openapi.alipay.com/gateway.do";
 const CALLBACK_URL = process.env.ALIPAY_CALLBACK_URL || "https://shanyuantang.vercel.app/api/payment/alipay-callback";
 
