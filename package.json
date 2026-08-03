@@ -12,6 +12,7 @@
     "alipay-sdk": "^4.14.0",
     "bcryptjs": "^3.0.3",
     "jsonwebtoken": "^9.0.3",
+    "lunar-typescript": "^1.8.6",
     "mysql2": "^3.23.2",
     "next": "16.2.12",
     "qrcode": "^1.5.4",
