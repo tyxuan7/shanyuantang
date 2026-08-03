@@ -42,6 +42,17 @@ export async function POST(request: NextRequest) {
     };
     await insert("orders", order as unknown as Record<string, unknown>);
 
+    const envDebug = {
+      has_app_id: Boolean(process.env.ALIPAY_APP_ID),
+      app_id_len: (process.env.ALIPAY_APP_ID || "").length,
+      has_private_key: Boolean(process.env.ALIPAY_PRIVATE_KEY),
+      private_key_len: (process.env.ALIPAY_PRIVATE_KEY || "").length,
+      has_public_key: Boolean(process.env.ALIPAY_PUBLIC_KEY),
+      public_key_len: (process.env.ALIPAY_PUBLIC_KEY || "").length,
+      has_callback: Boolean(process.env.ALIPAY_CALLBACK_URL),
+      node_env: process.env.NODE_ENV || "",
+    };
+
     // 支付宝真实支付
     if (pay_method === "alipay" && process.env.ALIPAY_APP_ID) {
       try {
@@ -72,6 +83,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({
       order,
+      env_debug: envDebug,
       payment: {
         method: pay_method || "wechat",
         qr_url: qrUrl,
