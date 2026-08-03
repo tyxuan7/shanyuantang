@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
     };
     await insert("orders", order as unknown as Record<string, unknown>);
 
-    const envDebug = {
+    const envDebug: Record<string, any> = {
       has_app_id: Boolean(process.env.ALIPAY_APP_ID),
       app_id_len: (process.env.ALIPAY_APP_ID || "").length,
       has_private_key: Boolean(process.env.ALIPAY_PRIVATE_KEY),
@@ -73,6 +73,8 @@ export async function POST(request: NextRequest) {
         });
       } catch (e: any) {
         console.error("支付宝支付创建失败:", e.message);
+        envDebug.alipay_error = e.message || String(e);
+        envDebug.alipay_stack = e.stack?.slice(0, 300) || "";
       }
     }
 
