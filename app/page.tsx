@@ -133,7 +133,7 @@ export default function HomePage() {
           <div className="mx-auto flex size-14 items-center justify-center rounded-full border border-vermillion/30 bg-vermillion/10">
             <Icon name="lucide-sparkles" className="size-7 text-vermillion"/>
           </div>
-          <p className="text-sm tracking-widest" style={{color:"rgba(26,20,16,0.6)"}}>一灯传万灯</p>
+          <p className="text-sm tracking-widest" style={{color:"rgba(26,20,16,0.6)"}}>一灯传万灯 · v2</p>
           <h2 className="text-2xl tracking-widest md:text-3xl" style={{fontFamily:"var(--font-calligraphy)"}}>分享给家人 · 一起记录心愿</h2>
           <p className="mx-auto max-w-md text-base leading-loose" style={{color:"rgba(26,20,16,0.8)"}}>发给亲朋好友，让他们也能点一盏灯、求一支签、看一版传统文化参考。<br/>微信、朋友圈、抖音私信都可以分享，把一份温和祝愿传递出去。</p>
           <div className="flex justify-center">
